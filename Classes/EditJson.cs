@@ -13,9 +13,15 @@ public class EditJson
   {
     var obje = JObject.Parse(data);
 
+
+
+
     foreach (var prop in obje.Properties())
     {
-      if (prop.Name.Contains("tierThreeUnlocked", StringComparison.OrdinalIgnoreCase) ||
+      if (
+          prop.Name.Contains("TierTwoUnlockOwned", StringComparison.OrdinalIgnoreCase) ||
+          prop.Name.Contains("tierTwoUnlockOwned", StringComparison.OrdinalIgnoreCase) ||
+          prop.Name.Contains("tierThreeUnlocked", StringComparison.OrdinalIgnoreCase) ||
           prop.Name.Contains("TierThreeUnlockOwned", StringComparison.OrdinalIgnoreCase))
       {
         if (prop.Value["__type"]?.ToString() == "bool")
